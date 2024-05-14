@@ -5,15 +5,16 @@ import Image from "next/image";
 import Background from "./Background";
 
 const Page = () => {
-
-return (
-    <Box sx={{
-        height:'100vh',
-        width: '100vw'
-    }}>
-       <Background path="/images/grafika2.webp" />
+  return (
+    <Box
+      sx={{
+        height: "100vh",
+        width: "100vw",
+      }}
+    >
+      <Background path="/images/grafika3.webp" />
     </Box>
-)
-}
+  );
+};
 
-export default Page
+export default Page;

@@ -29,21 +29,23 @@ const Slider = () => {
 
   return (
     <Box>
-      <button onClick={prevImage}>{"<"}</button>
+      <IconButton onClick={prevImage}>
+        <ArrowBackIosNewIcon />
+      </IconButton>
+
       <Image
         src={images[currentImageIndex]}
         style={{
-          opacity: "0",
+          opacity: "1",
           animation: "2s showanim forwards",
         }}
         alt={`Slide ${currentImageIndex + 1}`}
-        width={300
-        }
-        
+        width={600}
+
         //zroibć breakpointy dla szerokości Image//
       />
       <IconButton onClick={nextImage}>
-        <ArrowBackIosNewIcon />
+        <ArrowForwardIosIcon />
       </IconButton>
     </Box>
   );
