@@ -12,6 +12,7 @@ import Drawer from "@mui/material/Drawer";
 import MenuIcon from "@mui/icons-material/Menu";
 import { fontStyle, fontWeight } from "@mui/system";
 import SchoolIcon from "@mui/icons-material/School";
+import Link from "next/link";
 
 const logoStyle = {
   width: "140px",
@@ -117,6 +118,7 @@ function AppAppBar() {
                   onClick={() => scrollToSection("features")}
                   sx={{ py: "6px", px: "12px" }}
                 >
+                  
                   <Typography
                     variant="body2"
                     color="text.primary"
@@ -149,6 +151,7 @@ function AppAppBar() {
                   onClick={() => scrollToSection("pricing")}
                   sx={{ py: "6px", px: "12px" }}
                 >
+                <Link href={'#pricing'} scroll={false}>
                   <Typography
                     variant="body2"
                     color="text.primary"
@@ -156,6 +159,7 @@ function AppAppBar() {
                   >
                     Abonamenty
                   </Typography>
+                  </Link>
                 </MenuItem>
                 {/* <MenuItem
                   onClick={() => scrollToSection('faq')}
@@ -198,7 +202,13 @@ function AppAppBar() {
                 sx={{
                   backgroundColor: "#9B30FF", // Ustawienie tła jako gradientu liniowego
                   color: "white", // Ustawienie koloru tekstu na biały
+                  '&: hover' : {
+                    opacity: "0.5",
+                    backgroundColor: 'white',
+                    color: 'black'
+                  }
                 }}
+                
               >
                 Logowanie
               </Button>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import im2 from "../public/images/grafika2.webp";
 import im3 from "../public/images/grafika3.webp";
 import im4 from "../public/images/grafika4.webp";
+import im5 from "../public/images/test.jpg";
 import { Box, IconButton } from "@mui/material";
 import Image from "next/image";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
@@ -9,7 +10,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Slider = () => {
   // Lista obrazów
-  const images = [im2, im3, im4];
+  const images = [im2, im3, im5];
 
   // Stan do śledzenia aktualnego indeksu obrazu
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -28,7 +29,10 @@ const Slider = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{
+      display : 'flex',
+      alignItems: "center",
+    }}>
       <IconButton onClick={prevImage}>
         <ArrowBackIosNewIcon />
       </IconButton>
@@ -40,7 +44,7 @@ const Slider = () => {
           animation: "2s showanim forwards",
         }}
         alt={`Slide ${currentImageIndex + 1}`}
-        width={600}
+        width={1450}
 
         //zroibć breakpointy dla szerokości Image//
       />

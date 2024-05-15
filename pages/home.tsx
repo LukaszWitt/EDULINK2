@@ -9,6 +9,9 @@ import AppAppBar from "@/components/navbar";
 import Page from "@/components/Page";
 import Slider from "../components/Slider";
 import { Grid } from "@mui/material";
+import Pricing from "@/components/Pricing";
+
+
 
 export default function MyApp() {
   return (
@@ -41,6 +44,17 @@ export default function MyApp() {
           marginTop={"90px"}
         >
           <Slider />
+        </Grid>
+        
+        
+        <Grid
+          item
+          xs={12}
+          display={"flex"}
+          justifyContent={"center"}
+          marginTop={"90px"}
+        >
+          <Pricing />
         </Grid>
       </Grid>
     </Box>
