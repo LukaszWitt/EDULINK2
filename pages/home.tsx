@@ -11,6 +11,9 @@ import Slider from "../components/Slider";
 import { Grid } from "@mui/material";
 import Pricing from "@/components/Pricing";
 import CardFlip from "../components/CardFlip";
+import { Height } from "@mui/icons-material";
+import { color } from "framer-motion";
+import Background from "@/components/Background";
 
 export default function MyApp() {
   return (
@@ -24,7 +27,7 @@ export default function MyApp() {
       }}
     >
       <AppAppBar />
-      <CardFlip />
+
       <Grid container justifyContent={"center"} alignItems={"center"}>
         <Grid
           item
@@ -43,6 +46,24 @@ export default function MyApp() {
           marginTop={"90px"}
         >
           <Slider />
+        </Grid>
+
+        <Grid item xs={6} sm={3} md={3} lg={3} xl={3} padding={2}>
+          <CardFlip
+            frontIcon={<div>Ikona 1</div>}
+            frontText={<div>Tekst 1</div>}
+            backText={<div>Tekst 1 na odwrocie</div>}
+            backButtonText="Przycisk 1"
+          />
+        </Grid>
+
+        <Grid item xs={6} sm={3} md={3} lg={3} xl={3} padding={2}>
+          <CardFlip
+            frontIcon={<div>Ikona 1</div>}
+            frontText={<div>Tekst 1</div>}
+            backText={<div>Tekst 1 na odwrocie</div>}
+            backButtonText="Przycisk 1"
+          />
         </Grid>
 
         <Grid

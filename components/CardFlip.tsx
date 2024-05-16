@@ -1,63 +1,83 @@
 import React, { useState } from "react";
 import { styled } from "@mui/system";
 
+// Interfejs props dla komponentu CardFlip
 interface CardFlipProps {
-  front: React.ReactNode; // Przekazuje zawartość przedniej strony karty jako ReactNode
-  back: React.ReactNode; // Przekazuje zawartość tylnej strony karty jako ReactNode
-  width?: string; // Opcjonalna szerokość kontenera karty
-  height?: string; // Opcjonalna wysokość kontenera karty
+  frontIcon: React.ReactNode; // Ikona przedniej strony karty
+  frontText: React.ReactNode; // Tekst przedniej strony karty
+  backText: React.ReactNode; // Tekst tylnej strony karty
+  backButtonText: string; // Tekst przycisku na tylnej stronie karty
 }
 
+// Styled components dla komponentu CardFlip
 const FlipCard = styled("div")({
-  perspective: "1000px", // Ustawia perspektywę dla efektu 3D
-  overflow: "visible", // Ustawia overflow na visible, aby uniknąć problemów z renderowaniem zawartości 3D
+  perspective: "1000px",
+  overflow: "visible",
 });
 
 const FlipCardInner = styled("div")({
-  position: "relative", // Ustawia pozycję na relative dla wewnętrznego kontenera karty
-  width: "100%", // Ustawia szerokość na 100%
-  height: "100%", // Ustawia wysokość na 100%
-  transition: "1s", // Dodaje efekt przejścia dla animacji obracania karty
-  transformStyle: "preserve-3d", // Ustawia styl transformacji na 3D
+  position: "relative",
+  width: "100%",
+  height: "100%",
+  transition: "1s",
+  transformStyle: "preserve-3d",
 });
 
 const CardFace = styled("div")({
-  position: "absolute", // Ustawia pozycję na absolutną dla przedniej i tylnej strony karty
-  width: "100%", // Ustawia szerokość na 100%
-  height: "100%", // Ustawia wysokość na 100%
-  backfaceVisibility: "hidden", // Ukrywa tylne strony karty podczas obracania
-  borderRadius: "15px", // Dodaje zaokrąglenie rogów dla efektu estetycznego
-  padding: "10px", // Dodaje wewnętrzny padding dla zawartości karty
-  overflowY: "auto", // Ustawia overflow na auto, aby dodać pasek przewijania wewnątrz karty
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  backfaceVisibility: "hidden",
+  borderRadius: "15px",
+  padding: "20px",
+  backgroundColor: "#A758B5",
+  color: "white",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  textAlign: "center",
 });
 
-const CardFlip: React.FC<CardFlipProps> = ({ front, back, width, height }) => {
-  const [isFlipped, setIsFlipped] = useState(false); // Stan określający czy karta jest odwrócona
+// Komponent CardFlip
+const CardFlip: React.FC<CardFlipProps> = ({
+  frontIcon,
+  frontText,
+  backText,
+  backButtonText,
+}) => {
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
-    // Funkcja obsługująca kliknięcie, zmienia stan isFlipped
     setIsFlipped(!isFlipped);
   };
 
   return (
-    <FlipCard
-      sx={{
-        width: width, // Ustawia szerokość kontenera karty zgodnie z przekazanym props'em
-        height: height, // Ustawia wysokość kontenera karty zgodnie z przekazanym props'em
-      }}
-      onClick={handleClick} // Obsługa kliknięcia, zmienia stan isFlipped
-    >
+    <FlipCard onClick={handleClick}>
       <FlipCardInner
         className="Card"
-        sx={
+        style={
           !isFlipped
             ? { transform: "rotateY(0)" }
             : { transform: "rotateY(180deg)" }
-        } // Obraca kartę w zależności od stanu isFlipped
+        }
       >
-        <CardFace>{front}</CardFace> // Wyświetla przednią stronę karty
-        <CardFace sx={{ transform: "rotateY(180deg)" }}>{back}</CardFace> //
-        Wyświetla tylną stronę karty
+        {/* Przednia strona karty */}
+        <CardFace sx={{ width: "300px", height: "400px" }}>
+          {frontIcon}
+          <div>{frontText}</div>
+        </CardFace>
+        {/* Tylna strona karty */}
+        <CardFace
+          style={{
+            transform: "rotateY(180deg)",
+            width: "300px",
+            height: "400px",
+          }}
+        >
+          <div>{backText}</div>
+          <button>{backButtonText}</button>
+        </CardFace>
       </FlipCardInner>
     </FlipCard>
   );
