@@ -10,7 +10,8 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Slider = () => {
   // Lista obrazów
-  const images = [im2, im3, im5];
+  // const images = [im2, im3, im5];
+  const images = [im5];
 
   // Stan do śledzenia aktualnego indeksu obrazu
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -29,10 +30,12 @@ const Slider = () => {
   };
 
   return (
-    <Box sx={{
-      display : 'flex',
-      alignItems: "center",
-    }}>
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
       <IconButton onClick={prevImage}>
         <ArrowBackIosNewIcon />
       </IconButton>

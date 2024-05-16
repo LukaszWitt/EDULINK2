@@ -10,8 +10,7 @@ import Page from "@/components/Page";
 import Slider from "../components/Slider";
 import { Grid } from "@mui/material";
 import Pricing from "@/components/Pricing";
-
-
+import CardFlip from "../components/CardFlip";
 
 export default function MyApp() {
   return (
@@ -25,7 +24,7 @@ export default function MyApp() {
       }}
     >
       <AppAppBar />
-
+      <CardFlip />
       <Grid container justifyContent={"center"} alignItems={"center"}>
         <Grid
           item
@@ -45,8 +44,7 @@ export default function MyApp() {
         >
           <Slider />
         </Grid>
-        
-        
+
         <Grid
           item
           xs={12}
