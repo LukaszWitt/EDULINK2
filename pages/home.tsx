@@ -11,9 +11,15 @@ import Slider from "../components/Slider";
 import { Grid } from "@mui/material";
 import Pricing from "@/components/Pricing";
 import CardFlip from "../components/CardFlip";
-import { Height } from "@mui/icons-material";
+import { FormatSize, Height } from "@mui/icons-material";
 import { color } from "framer-motion";
 import Background from "@/components/Background";
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import SchoolIcon from '@mui/icons-material/School';
+import HandshakeIcon from '@mui/icons-material/Handshake';
+
+
+
 
 export default function MyApp() {
   return (
@@ -64,20 +70,67 @@ export default function MyApp() {
             
             <Grid item xs={6} padding={2} display={'flex'} justifyContent={'center'}>
               <CardFlip
-                frontIcon={<div>Ikona 1</div>}
-                frontText={<div>Tekst 1</div>}
-                backText={<div>Tekst 1 na odwrocie</div>}
+                frontIcon= {<SchoolIcon sx={{
+                  fontSize:'150px',
+                  transition: '.4s',
+                  cursor: 'pointer',
+                  position: 'absolute',
+                  top: 45,
+                    '&:hover': {
+                    transform: 'rotateZ(5deg) scale(1.3)',
+                  
+                  },
+
+                }}
+                />}
+                frontText={<div style={{
+                  top: 95,
+                  fontSize: 25,
+                  position: 'relative',
+                  fontFamily: '"Roboto", sans-serif',
+                  fontWeight: '700',
+                  fontStyle: 'normal',                  
+                  
+                }}>JESTEM STUDENTEM SZUKAJĄCYM PRACODAWCY</div>}
+                backText={<div style={{
+                  top: -100,
+                  fontSize: 25,
+                  position: 'relative',
+                  fontFamily: '"Roboto", sans-serif',
+                  fontWeight: '700',
+                  fontStyle: 'normal',
+                }}
+                >ZAREJESTRUJ SIĘ UŻYWAJĄC KLAWISZA PONIŻEJ!</div>}
                 backButtonText="Przycisk 1"
               />
             </Grid>
 
-            <Grid sx={{
-              backgroundColor: 'black'
-            }} item xs={6}  padding={2} display={'flex'} justifyContent={'center'}>
+            <Grid item xs={6}  padding={2} display={'flex'} justifyContent={'center'}>
               <CardFlip
-                frontIcon={<div>Ikona 1</div>}
-                frontText={<div>Tekst 1</div>}
-                backText={<div>Tekst 1 na odwrocie</div>}
+                frontIcon={<HandshakeIcon sx={{
+                  fontSize:'150px',
+                  transition: '.4s',
+                  cursor: 'pointer',
+                  position: 'absolute',
+                  top: 45,
+                    '&:hover': {
+                    transform: 'rotateZ(5deg) scale(1.3)',
+                }}} /> }
+                frontText={<div style={{
+                  top: 95,
+                  fontSize: 25,
+                  position: 'relative',
+                  fontStyle: "bold"
+                }}>JESTEM PRACODAWCĄ SZUKAJĄCYM PRACOWNIKA</div>}
+                backText={<div style={{
+                  top: -100,
+                  fontSize: 25,
+                  position: 'relative',
+                  fontFamily: '"Roboto", sans-serif',
+                  fontWeight: '700',
+                  fontStyle: 'normal',
+                }}
+                >ZAREJESTRUJ SIĘ UŻYWAJĄC KLAWISZA PONIŻEJ!</div>}
                 backButtonText="Przycisk 1"
               />
             </Grid>
