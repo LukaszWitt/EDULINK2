@@ -13,6 +13,8 @@ interface CardFlipProps {
 const FlipCard = styled("div")({
   perspective: "1000px",
   overflow: "visible",
+  height: '100%',
+
 });
 
 const FlipCardInner = styled("div")({
@@ -21,6 +23,10 @@ const FlipCardInner = styled("div")({
   height: "100%",
   transition: "1s",
   transformStyle: "preserve-3d",
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+
 });
 
 const CardFace = styled("div")({
@@ -70,6 +76,8 @@ const CardFlip: React.FC<CardFlipProps> = ({
         {/* Tylna strona karty */}
         <CardFace
           style={{
+            justifyContent: 'center',
+            display: 'flex',
             transform: "rotateY(180deg)",
             width: "300px",
             height: "400px",

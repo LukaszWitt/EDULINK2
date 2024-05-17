@@ -12,7 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import graphics from "../public/images/grafika4.webp";
+
 
 function Copyright(props: any) {
   return (
@@ -26,6 +26,9 @@ function Copyright(props: any) {
     </Typography>
   );
 }
+
+
+
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -105,6 +108,10 @@ export default function SignInSide() {
                 control={<Checkbox value="remember" color="secondary" />}
                 label="Zapamiętaj mnie"
               />
+             
+             
+             
+             
               <Button
                 type="submit"
                 fullWidth
@@ -113,6 +120,12 @@ export default function SignInSide() {
               >
                 Zaloguj się
               </Button>
+             
+             
+             
+             
+             
+             
               <Grid container>
                 <Grid item xs>
                   <Link href="#" variant="body2">

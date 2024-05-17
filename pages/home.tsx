@@ -28,54 +28,77 @@ export default function MyApp() {
     >
       <AppAppBar />
 
-      <Grid container justifyContent={"center"} alignItems={"center"}>
-        <Grid
-          item
-          xs={12}
-          display={"flex"}
-          justifyContent={"center"}
-          maxWidth={"100%"}
-        >
-          <Page />
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          display={"flex"}
-          justifyContent={"center"}
-          marginTop={"90px"}
-        >
-          <Slider />
-        </Grid>
+        <Box>
+          <Grid container justifyContent={"center"} alignItems={"center"}>
+            <Grid
+              item
+              xs={12}
+              display={"flex"}
+              justifyContent={"center"}
+              maxWidth={"100%"}
+            >
+              <Page />
+            </Grid>
+            </Grid>
 
-        <Grid item xs={6} sm={3} md={3} lg={3} xl={3} padding={2}>
-          <CardFlip
-            frontIcon={<div>Ikona 1</div>}
-            frontText={<div>Tekst 1</div>}
-            backText={<div>Tekst 1 na odwrocie</div>}
-            backButtonText="Przycisk 1"
-          />
-        </Grid>
+        </Box>
+           
+           
+          <Box>
+            <Grid
+              item
+              xs={12}
+              display={"flex"}
+              justifyContent={"center"}
+              marginTop={"90px"}
+            >
+              <Slider />
+            </Grid>
+           </Box> 
+          
+          
+          <Box>
+            <Grid container justifyContent={'center'}  sx={{
+            minHeight:'70vh',
+          }}>
+            
+            <Grid item xs={6} padding={2} display={'flex'} justifyContent={'center'}>
+              <CardFlip
+                frontIcon={<div>Ikona 1</div>}
+                frontText={<div>Tekst 1</div>}
+                backText={<div>Tekst 1 na odwrocie</div>}
+                backButtonText="Przycisk 1"
+              />
+            </Grid>
 
-        <Grid item xs={6} sm={3} md={3} lg={3} xl={3} padding={2}>
-          <CardFlip
-            frontIcon={<div>Ikona 1</div>}
-            frontText={<div>Tekst 1</div>}
-            backText={<div>Tekst 1 na odwrocie</div>}
-            backButtonText="Przycisk 1"
-          />
-        </Grid>
+            <Grid sx={{
+              backgroundColor: 'black'
+            }} item xs={6}  padding={2} display={'flex'} justifyContent={'center'}>
+              <CardFlip
+                frontIcon={<div>Ikona 1</div>}
+                frontText={<div>Tekst 1</div>}
+                backText={<div>Tekst 1 na odwrocie</div>}
+                backButtonText="Przycisk 1"
+              />
+            </Grid>
 
-        <Grid
-          item
-          xs={12}
-          display={"flex"}
-          justifyContent={"center"}
-          marginTop={"90px"}
-        >
-          <Pricing />
-        </Grid>
-      </Grid>
-    </Box>
-  );
-}
+            </Grid>
+          </Box>
+
+          <Box>
+            <Grid
+              item
+              xs={12}
+              display={"flex"}
+              justifyContent={"center"}
+              marginTop={"90px"}
+            >
+              <Pricing />
+            </Grid>
+           </Box>
+         </Box>
+        
+        
+        
+      );
+    }
