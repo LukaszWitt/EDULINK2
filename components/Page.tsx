@@ -18,3 +18,27 @@ const Page = () => {
 };
 
 export default Page;
+
+
+
+// const Page = () => {
+//   return (
+//     <Box
+//       sx={{
+//         position: "absolute",
+//         top: "0",
+//         left: "0",
+//         backgroundSize: "cover",
+//         backgroundImage: `url("/images/grafika3.webp")`,
+//         backgroundPosition: "center",
+//         backgroundRepeat: "no-repeat",
+//         width: "100%",
+//         height: "100%",
+//       }}
+//     >
+//       <Background path="/images/grafika3.webp" />
+//     </Box>
+//   );
+// };
+
+// export default Page;

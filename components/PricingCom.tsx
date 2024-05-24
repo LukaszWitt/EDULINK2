@@ -18,10 +18,9 @@ const tiers = [
     title: 'Podstawowe',
     price: '3,99',
     description: [
-      'Mapowanie umiejętności',
-      // '2 GB of storage',
-      // 'Help center access',
-      // 'Email support',
+    'Możliwość wystawienia ogłoszeń w ilości : 2',
+    'Wybór 5 umiejętności per ogłoszenie',
+    
     ],
     buttonText: 'Rozpocznij teraz',
     buttonVariant: 'outlined',
@@ -29,14 +28,12 @@ const tiers = [
   {
     title: 'Profesionalne',
     subheader: 'Polecane',
-    price: '6,99',
+    price: '99',
     description: [
-      'Mapowanie umiejętności',
-      'Możliwość kontaktu z potencjalnym pracodawcą',
-      'Zaczepki bez limitu',
-      'Możliwość dodania portfolio',
-      'Podgląd firm w obszarze do 25 km',
-      'Dostęp do kalendarza eventów i targów branżowych',
+      'Możliwość wystawienia ogłoszeń w ilości : 3',
+      'Wybór 10 umiejętności per ogłoszenie',
+      'Brak ograniczeń wyszukiwań',
+      
     ],
     buttonText: 'Rozpocznij teraz',
     buttonVariant: 'contained',
@@ -46,16 +43,15 @@ const tiers = [
     title: 'Premium',
     price: '4,99',
     description: [
-      'Mapowanie umiejętności',
-      'Podgląd firm w obszarze do 5 km',
-      'Zaczepki limit: 3',
+      'Możliwość wystawienia ogłoszeń w ilości : 1',
+      'Wybór 3 umiejętności per ogłoszenie',
     ],
     buttonText: 'Rozpocznij teraz',
     buttonVariant: 'outlined',
   },
 ];
 
-export default function Pricing() {
+export default function PricingCom() {
   return (
     <Container
       id="pricing"
@@ -75,8 +71,8 @@ export default function Pricing() {
           textAlign: { sm: 'left', md: 'center' },
         }}
       >
-        <Typography component="h2" variant="h4" color="#A758B5" fontFamily={'playfair-display, sans-serif'} fontWeight={600}>
-          ABONAMENT DLA STUDENTÓW
+        <Typography component="h2" variant="h3" color="#A758B5" fontFamily={'playfair-display, sans-serif'} fontWeight={600}>
+          ABONAMENT DLA FIRM
         </Typography>
         <Typography variant="body1" color="text.secondary">
           {/* Quickly build an effective pricing table for your potential customers with
@@ -149,10 +145,10 @@ export default function Pricing() {
                   }}
                 >
                   <Typography component="h3" variant="h2">
-                    {tier.price}
+                    {tier.price} 
                   </Typography>
                   <Typography component="h3" variant="h6">
-                    &nbsp; miesięcznie
+                    zł &nbsp; miesięcznie 
                   </Typography>
                 </Box>
                 <Divider

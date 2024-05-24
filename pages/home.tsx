@@ -17,6 +17,7 @@ import Background from "@/components/Background";
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import SchoolIcon from '@mui/icons-material/School';
 import HandshakeIcon from '@mui/icons-material/Handshake';
+import PricingCom from "@/components/PricingCom";
 
 
 
@@ -87,7 +88,7 @@ export default function MyApp() {
                   top: 95,
                   fontSize: 25,
                   position: 'relative',
-                  fontFamily: '"Roboto", sans-serif',
+                  fontFamily: 'playfair-display, sans-serif',
                   fontWeight: '700',
                   fontStyle: 'normal',                  
                   
@@ -96,7 +97,7 @@ export default function MyApp() {
                   top: -100,
                   fontSize: 25,
                   position: 'relative',
-                  fontFamily: '"Roboto", sans-serif',
+                  fontFamily: 'playfair-display, sans-serif',
                   fontWeight: '700',
                   fontStyle: 'normal',
                 }}
@@ -120,13 +121,15 @@ export default function MyApp() {
                   top: 95,
                   fontSize: 25,
                   position: 'relative',
-                  fontStyle: "bold"
+                  fontFamily: 'playfair-display, sans-serif',
+                  fontWeight: '700',
+                  fontStyle:'normal'
                 }}>JESTEM PRACODAWCĄ SZUKAJĄCYM PRACOWNIKA</div>}
                 backText={<div style={{
                   top: -100,
                   fontSize: 25,
                   position: 'relative',
-                  fontFamily: '"Roboto", sans-serif',
+                  fontFamily: 'playfair-display, sans-serif',
                   fontWeight: '700',
                   fontStyle: 'normal',
                 }}
@@ -149,6 +152,20 @@ export default function MyApp() {
               <Pricing />
             </Grid>
            </Box>
+
+          <Box>
+            <Grid
+             item
+             xs={12}
+             display={"flex"}
+             justifyContent={"center"}
+             marginTop={"90px"}
+             >
+              <PricingCom/>
+             </Grid>
+          </Box>
+
+
          </Box>
         
         
