@@ -15,7 +15,7 @@ import Background from './Background';
 
 const tiers = [
   {
-    title: 'Podstawowe',
+    title: 'Pakiet Podstawowy',
     price: '3,99',
     description: [
       'Mapowanie umiejętności',
@@ -27,7 +27,7 @@ const tiers = [
     buttonVariant: 'outlined',
   },
   {
-    title: 'Profesionalne',
+    title: 'Pakiet Profesionalny',
     subheader: 'Polecane',
     price: '6,99',
     description: [
@@ -43,7 +43,19 @@ const tiers = [
     
   },
   {
-    title: 'Premium',
+    title: 'Premium +',
+    price: '23,49',
+    description: [
+      'Mapowanie umiejętności',
+      'Podgląd firm w obszarze do 5 km',
+      'Zaczepki limit: 3',
+    ],
+    buttonText: 'Rozpocznij teraz',
+    buttonVariant: 'outlined',
+  },
+
+    {
+    title: 'Premium ',
     price: '4,99',
     description: [
       'Mapowanie umiejętności',
@@ -53,6 +65,8 @@ const tiers = [
     buttonText: 'Rozpocznij teraz',
     buttonVariant: 'outlined',
   },
+
+
 ];
 
 export default function Pricing() {
@@ -92,7 +106,7 @@ export default function Pricing() {
             key={tier.title}
             xs={12}
             sm={tier.title === 'Premium' ? 12 : 6}
-            md={4}
+            md={3}   //tutaj zmieniam szerokość cenników 3 dla 4 cenników , 4 dla 3 cenników//
           >
             <Card
               sx={{
@@ -100,11 +114,11 @@ export default function Pricing() {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 4,
-                border: tier.title === 'Profesionalne' ? '2px solid' : '2px solid',
+                border: tier.title === 'Pakiet Profesionalny' ? '2px solid' : '2px solid',
                 borderColor:
-                  tier.title === 'Profesionalne' ? '3A758B5' : 'undefined',
+                  tier.title === 'Pakiet Profesionalny' ? '3A758B5' : 'undefined',
                 background:
-                  tier.title === 'Profesionalne'
+                  tier.title === 'Pakiet Profesionalny'
                     ? '#A758B5'
                     : undefined,
               }}
@@ -116,13 +130,13 @@ export default function Pricing() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    color: tier.title === 'Profesionalne' ? 'grey.100' : '',
+                    color: tier.title === 'Pakiet Profesionalny' ? 'grey.100' : '',
                   }}
                 >
                   <Typography component="h3" variant="h6">
                     {tier.title}
                   </Typography>
-                  {tier.title === 'Profesionalne' && (
+                  {tier.title === 'Pakiet Profesionalny' && (
                     <Chip
                       icon={<AutoAwesomeIcon />}
                       label={tier.subheader}
@@ -145,13 +159,13 @@ export default function Pricing() {
                   sx={{
                     display: 'flex',
                     alignItems: 'baseline',
-                    color: tier.title === 'Profesionalne' ? 'grey.50' : undefined,
+                    color: tier.title === 'Pakiet Profesionalny' ? 'grey.50' : undefined,
                   }}
                 >
                   <Typography component="h3" variant="h2">
                     {tier.price}
                   </Typography>
-                  <Typography component="h3" variant="h6">
+                  <Typography component="h4" variant="h6">
                     &nbsp; miesięcznie
                   </Typography>
                 </Box>
@@ -177,7 +191,7 @@ export default function Pricing() {
                       sx={{
                         width: 20,
                         color:
-                          tier.title === 'Profesionalne'
+                          tier.title === 'Pakiet Profesionalny'
                             ? 'white'
                             : '#A758B5',
                       }}
@@ -187,7 +201,7 @@ export default function Pricing() {
                       variant="subtitle2"
                       sx={{
                         color:
-                          tier.title === 'Profesionalne' ? 'grey.200' : undefined,
+                          tier.title === 'Pakiet Profesionalny' ? 'grey.200' : undefined,
                       }}
                     >
                       {line}
@@ -198,18 +212,18 @@ export default function Pricing() {
               <CardActions>
                 <Button sx={{
                     backgroundColor:
-                    tier.title === 'Profesionalne'
+                    tier.title === 'Pakiet Profesionalny'
                       ? 'white'
                       : '#A758B5',
 
                       color:
-                      tier.title === 'Profesionalne'
+                      tier.title === 'Pakiet Profesionalny'
                       ? 'black'
                       : 'white',
 
 
                       
-                     ' &:hover' : tier.title === 'Profesionalne' ? {
+                     ' &:hover' : tier.title === 'Pakiet Profesionalny' ? {
                         backgroundColor: '#A758B5', color:'white',
                      } : {
                         backgroundColor: "white", color: 'black'

@@ -154,7 +154,7 @@ export default function MyApp() {
            </Box>
 
           <Box>
-            <Grid
+            <Grid 
              item
              xs={12}
              display={"flex"}
