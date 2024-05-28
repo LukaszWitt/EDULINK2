@@ -71,7 +71,7 @@ export default function PricingCom() {
           textAlign: { sm: 'left', md: 'center' },
         }}
       >
-        <Typography component="h2" variant="h3" color="#A758B5" fontFamily={'playfair-display, sans-serif'} fontWeight={600}>
+        <Typography component="h2" variant="h4" color="#A758B5" fontFamily={'playfair-display, sans-serif'} fontWeight={600}>
           ABONAMENT DLA FIRM
         </Typography>
         <Typography variant="body1" color="text.secondary">

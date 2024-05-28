@@ -165,7 +165,7 @@ export default function Pricing() {
                   <Typography component="h3" variant="h2">
                     {tier.price}
                   </Typography>
-                  <Typography component="h4" variant="h6">
+                  <Typography component="h4" variant="h6" fontSize={15}>
                     &nbsp; miesięcznie
                   </Typography>
                 </Box>
