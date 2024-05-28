@@ -8,7 +8,7 @@ import Navbar from "@/components/navbar";
 import AppAppBar from "@/components/navbar";
 import Page from "@/components/Page";
 import Slider from "../components/Slider";
-import { Grid } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import Pricing from "@/components/Pricing";
 import CardFlip from "../components/CardFlip";
 import { FormatSize, Height } from "@mui/icons-material";
@@ -18,7 +18,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import SchoolIcon from '@mui/icons-material/School';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import PricingCom from "@/components/PricingCom";
-
+import Pricing1 from "@/components/Pricing1";
 
 
 
@@ -94,54 +94,100 @@ export default function MyApp() {
                   
                 }}>JESTEM STUDENTEM SZUKAJĄCYM PRACODAWCY</div>}
                 backText={<div style={{
-                  top: -100,
-                  fontSize: 25,
                   position: 'relative',
+                  fontSize: 25,
                   fontFamily: 'playfair-display, sans-serif',
                   fontWeight: '700',
                   fontStyle: 'normal',
-                }}
-                >ZAREJESTRUJ SIĘ UŻYWAJĄC KLAWISZA PONIŻEJ!</div>}
-                backButtonText="Przycisk 1"
+                  height: '100%', // Sprawia, że kontener zajmuje całą wysokość karty
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                  <div style={{ marginBottom: 'auto', marginTop: '-100px' }}>ZAREJESTRUJ SIĘ UŻYWAJĄC KLAWISZA PONIŻEJ!</div>
+                  <Button variant="contained" sx={{
+                    position: 'absolute',
+                    bottom: -120, // Odstęp od dolnej krawędzi
+                    fontSize: 20,
+                    backgroundColor: 'white',
+                    color: 'black',
+                    '&:hover' : {
+                      backgroundColor: '#A758B5',
+                      color: 'white'
+                    }
+
+                  }}>Rejestracja</Button>
+                </div>}
+              
               />
             </Grid>
 
-            <Grid item xs={6}  padding={2} display={'flex'} justifyContent={'center'}>
+            <Grid item xs={6} padding={2} display={'flex'} justifyContent={'center'}>
               <CardFlip
-                frontIcon={<HandshakeIcon sx={{
-                  fontSize:'150px',
-                  transition: '.4s',
-                  cursor: 'pointer',
-                  position: 'absolute',
-                  top: 45,
+                  frontIcon={<HandshakeIcon sx={{
+                    fontSize: '150px',
+                    transition: '.4s',
+                    cursor: 'pointer',
+                    position: 'absolute',
+                    top: 45,
                     '&:hover': {
-                    transform: 'rotateZ(5deg) scale(1.3)',
-                }}} /> }
-                frontText={<div style={{
-                  top: 95,
-                  fontSize: 25,
-                  position: 'relative',
-                  fontFamily: 'playfair-display, sans-serif',
-                  fontWeight: '700',
-                  fontStyle:'normal'
-                }}>JESTEM PRACODAWCĄ SZUKAJĄCYM PRACOWNIKA</div>}
-                backText={<div style={{
-                  top: -100,
-                  fontSize: 25,
-                  position: 'relative',
-                  fontFamily: 'playfair-display, sans-serif',
-                  fontWeight: '700',
-                  fontStyle: 'normal',
-                }}
-                >ZAREJESTRUJ SIĘ UŻYWAJĄC KLAWISZA PONIŻEJ!</div>}
-                backButtonText="Przycisk 1"
-              />
-            </Grid>
+                      transform: 'rotateZ(5deg) scale(1.3)',
+                    }
+                  }} />}
+                  frontText={<div style={{
+                    top: 95,
+                    fontSize: 25,
+                    position: 'relative',
+                    fontFamily: 'playfair-display, sans-serif',
+                    fontWeight: '700',
+                    fontStyle: 'normal'
+                  }}>JESTEM PRACODAWCĄ SZUKAJĄCYM PRACOWNIKA</div>}
+                  backText={<div style={{
+                    position: 'relative',
+                    fontSize: 25,
+                    fontFamily: 'playfair-display, sans-serif',
+                    fontWeight: '700',
+                    fontStyle: 'normal',
+                    height: '100%', // Sprawia, że kontener zajmuje całą wysokość karty
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                    <div style={{ marginBottom: 'auto', marginTop: '-100px' }}>ZAREJESTRUJ SIĘ UŻYWAJĄC KLAWISZA PONIŻEJ!</div>
+                    <Button variant="contained" sx={{
+                      position: 'absolute',
+                      bottom: -120, // Odstęp od dolnej krawędzi
+                      fontSize: 20,
+                      backgroundColor: 'white',
+                      color: 'black',
+                      '&:hover' : {
+                        backgroundColor: '#A758B5',
+                        color: 'white'
+                      }
+
+                    }}>Rejestracja</Button>
+                  </div>}
+                />
+              </Grid>
 
             </Grid>
           </Box>
 
           <Box>
+            <Grid
+              item
+              xs={12}
+              display={"flex"}
+              justifyContent={"center"}
+              marginTop={"90px"}
+            >
+              <Pricing1 />
+            </Grid>
+           </Box>
+
+           <Box>
             <Grid
               item
               xs={12}

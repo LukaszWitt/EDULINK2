@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { styled } from "@mui/system";
+import { Container } from "@mui/material";
 
 // Interfejs props dla komponentu CardFlip
 interface CardFlipProps {
   frontIcon: React.ReactNode; // Ikona przedniej strony karty
   frontText: React.ReactNode; // Tekst przedniej strony karty
   backText: React.ReactNode; // Tekst tylnej strony karty
-  backButtonText: string; // Tekst przycisku na tylnej stronie karty
 }
 
 // Styled components dla komponentu CardFlip
@@ -50,7 +50,7 @@ const CardFlip: React.FC<CardFlipProps> = ({
   frontIcon,
   frontText,
   backText,
-  backButtonText,
+
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -59,35 +59,37 @@ const CardFlip: React.FC<CardFlipProps> = ({
   };
 
   return (
-    <FlipCard onClick={handleClick}>
-      <FlipCardInner
-        className="Card"
-        style={
-          !isFlipped
-            ? { transform: "rotateY(0)" }
-            : { transform: "rotateY(180deg)" }
-        }
-      >
-        {/* Przednia strona karty */}
-        <CardFace sx={{ width: "300px", height: "400px" }}>
-          {frontIcon}
-          <div>{frontText}</div>
-        </CardFace>
-        {/* Tylna strona karty */}
-        <CardFace
-          style={{
-            justifyContent: 'center',
-            display: 'flex',
-            transform: "rotateY(180deg)",
-            width: "300px",
-            height: "400px",
-          }}
+    <Container id="cardflip">
+      <FlipCard onClick={handleClick}>
+        <FlipCardInner
+          className="Card"
+          style={
+            !isFlipped
+              ? { transform: "rotateY(0)" }
+              : { transform: "rotateY(180deg)" }
+          }
         >
-          <div>{backText}</div>
-          <button>{backButtonText}</button>
-        </CardFace>
-      </FlipCardInner>
-    </FlipCard>
+          {/* Przednia strona karty */}
+          <CardFace sx={{ width: "300px", height: "400px" }}>
+            {frontIcon}
+            <div>{frontText}</div>
+          </CardFace>
+          {/* Tylna strona karty */}
+          <CardFace
+            style={{
+              justifyContent: 'center',
+              display: 'flex',
+              transform: "rotateY(180deg)",
+              width: "300px",
+              height: "400px",
+            }}
+          >
+            <div>{backText}</div>
+        
+          </CardFace>
+        </FlipCardInner>
+      </FlipCard>
+    </Container>
   );
 };
 

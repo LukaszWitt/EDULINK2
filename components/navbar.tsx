@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { fontStyle, fontWeight } from "@mui/system";
 import SchoolIcon from "@mui/icons-material/School";
 import Link from "next/link";
+import CardFlip from "./CardFlip";
 
 const logoStyle = {
   width: "140px",
@@ -103,14 +104,18 @@ function AppAppBar() {
                 alt="logo of sitemark"
               /> */}
 
+             <Button>
               <Box
                 component={SchoolIcon}
                 sx={{
                   //   ...logoStyle, // Zachowaj pozostałe style z logoStyle
                   color: "black", // Zmień kolor ikony na czerwony
                   fontSize: 58, // Zmień rozmiar ikony na 48 pikseli
+                  
                 }}
+                onClick={() => scrollToSection("page")}
               />
+              </Button>
 
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 {/* Renderowanie opcji menu */}
@@ -149,7 +154,7 @@ function AppAppBar() {
                 </MenuItem> */}
                 <MenuItem
                   onClick={() => scrollToSection("pricing")}
-                  sx={{ py: "6px", px: "12px" }}
+                  
                 >
                 <Link href={'#pricing'} scroll={false}>
                   <Typography
@@ -179,25 +184,33 @@ function AppAppBar() {
                 alignItems: "center",
               }}
             >
+
               <Button
                 color="primary" // Kolor tekstu zostaje zmieniony na fioletowy (domyślnie)
                 variant="text" // Ustawienie wariantu na "text"
                 size="small" // Rozmiar przycisku
                 component="a" // Element HTML, na który będzie odnośnik (a - oznacza odnośnik)
-                href="/material-ui/getting-started/templates/sign-in/" // Adres URL, do którego prowadzi odnośnik
+                // href="/material-ui/getting-started/templates/sign-in/" // Adres URL, do którego prowadzi odnośnik
+                // href= "#CardFlip"
                 target="_blank" // Otwiera link w nowej karcie przeglądarki
                 sx={{
                   color: "black", // Ustawienie koloru tekstu na czarny
                 }}
+                onClick={() => scrollToSection("cardflip")}
+                
               >
                 Rejestracja
               </Button>
+            
+
+
+
               <Button
                 color="primary" // Kolor tekstu zostaje zmieniony na biały (domyślnie)
                 variant="contained" // Ustawienie wariantu na "contained"
                 size="small" // Rozmiar przycisku
                 component="a" // Element HTML, na który będzie odnośnik (a - oznacza odnośnik)
-                href="/material-ui/getting-started/templates/sign-up/" // Adres URL, do którego prowadzi odnośnik
+                // href="/material-ui/getting-started/templates/sign-up/" // Adres URL, do którego prowadzi odnośnik
                 target="_blank" // Otwiera link w nowej karcie przeglądarki
                 sx={{
                   backgroundColor: "#9B30FF", // Ustawienie tła jako gradientu liniowego
@@ -208,6 +221,7 @@ function AppAppBar() {
                     color: 'black'
                   }
                 }}
+                onClick={() => scrollToSection("cardflip")}
                 
               >
                 Logowanie
@@ -257,6 +271,7 @@ function AppAppBar() {
                   <MenuItem onClick={() => scrollToSection("faq")}>
                     FAQ
                   </MenuItem>
+              
                   {/* Linia podziału w panelu bocznym */}
                   <Divider />
                   {/* Przycisk zarejestruj w panelu bocznym */}
