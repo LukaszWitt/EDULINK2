@@ -52,7 +52,7 @@ const Slider = () => {
           animation: "2s showanim forwards",
         }}
         alt={`Slide ${currentImageIndex + 1}`}
-        width={1450}
+        width={1200} //1450//
         // zrobić breakpointy dla szerokości Image
       />
       <IconButton onClick={nextImage}>

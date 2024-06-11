@@ -5,8 +5,7 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (<Box sx={{backgroundColor: 'white', scrollBehavior: 'smooth'}}><Component {...pageProps} />
-  {/* <Background path= '/images/grafika2.webp'/> */}
-
+ 
           </Box> 
 )
 }

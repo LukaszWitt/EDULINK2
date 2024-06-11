@@ -19,6 +19,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import PricingCom from "@/components/PricingCom";
 import Pricing1 from "@/components/Pricing1";
+import RegistrationFormCompany from "./registrationformcompany";
 
 
 
@@ -116,8 +117,11 @@ export default function MyApp() {
                       backgroundColor: '#A758B5',
                       color: 'white'
                     }
+                   
 
-                  }}>Rejestracja</Button>
+                  }}
+                  href="/register?type=student"
+                  >Rejestracja</Button>
                 </div>}
               
               />
@@ -167,7 +171,9 @@ export default function MyApp() {
                         color: 'white'
                       }
 
-                    }}>Rejestracja</Button>
+                    }}
+                    href="/regiistrationformcompany"
+                    >Rejestracja</Button>
                   </div>}
                 />
               </Grid>

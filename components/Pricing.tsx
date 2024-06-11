@@ -204,6 +204,7 @@ export default function Pricing() {
                       sx={{
                         color:
                           tier.title === 'Pakiet Profesionalny' ? 'grey.200' : undefined,
+                        fontSize: "15px"
                       }}
                     >
                       {line}

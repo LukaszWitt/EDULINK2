@@ -63,6 +63,7 @@ export default function PricingCom() {
         flexDirection: 'column',
         alignItems: 'center',
         gap: { xs: 3, sm: 6 },
+        
       }}
     >
       <Box
@@ -184,6 +185,7 @@ export default function PricingCom() {
                       sx={{
                         color:
                           tier.title === 'Profesionalne' ? 'grey.200' : undefined,
+                          fontSize: "15px"
                       }}
                     >
                       {line}
