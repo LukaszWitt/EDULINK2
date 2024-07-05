@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/system';
 
-// Styled Components
 const StyledContainer = styled(Box)({
   height: '100vh',
   width: '100wh',
