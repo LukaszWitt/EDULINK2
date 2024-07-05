@@ -14,6 +14,7 @@ import {
   Divider
 } from '@mui/material';
 import { styled } from '@mui/system';
+import { useRouter } from 'next/router';
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import { studentSchools, technicalSchools, vocationalSchools, highSchools } from '../components/schoolsData'; // Import list szkół
 
@@ -57,13 +58,13 @@ const StyledSelect = styled(Select)({
   marginTop: 20,
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
-      borderColor: '#A758B5',
+      borderColor: '#A758B5 !important', // Stały kolor obramowania
     },
     '&:hover fieldset': {
-      borderColor: '#A758B5',
+      borderColor: '#A758B5 !important', // Stały kolor obramowania
     },
     '&.Mui-focused fieldset': {
-      borderColor: '#A758B5',
+      borderColor: '#A758B5 !important', // Stały kolor obramowania
     },
   },
   '& .MuiInputBase-input': {
@@ -112,6 +113,7 @@ const RegistrationFormStudentStatus: React.FC = () => {
   const [status, setStatus] = useState('');
   const [schoolType, setSchoolType] = useState('');
   const [schools, setSchools] = useState([{ schoolName: '', studentType: '' }]);
+  const router = useRouter();
 
   const handleStatusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setStatus((event.target as HTMLInputElement).value);
@@ -127,16 +129,22 @@ const RegistrationFormStudentStatus: React.FC = () => {
   const handleSchoolNameChange = (index: number, value: string) => {
     const newSchools = [...schools];
     newSchools[index].schoolName = value;
+    console.log(newSchools);
     setSchools(newSchools);
   };
 
   const handleStudentTypeChange = (index: number, value: string) => {
     const newSchools = [...schools];
     newSchools[index].studentType = value;
-    if (value === 'wTrakcie') {
-      newSchools.push({ schoolName: '', studentType: '' });
-    }
     setSchools(newSchools);
+  };
+
+  const handleAddSchool = () => {
+    setSchools([...schools, { schoolName: '', studentType: '' }]);
+  };
+
+  const handleNextClick = () => {
+    router.push('/registrationformstudentskills');
   };
 
   const getSchoolOptions = () => {
@@ -152,11 +160,25 @@ const RegistrationFormStudentStatus: React.FC = () => {
     return [];
   };
 
+  const canShowNextButton = () => {
+    if (status === 'student') {
+      return schools.every(school => school.schoolName && school.studentType);
+    }
+    if (status === 'uczen') {
+      return schools.some(school => school.schoolName);
+    }
+    return false;
+  };
+
+  const canAddMoreSchools = () => {
+    return schools.every(school => school.schoolName && school.studentType);
+  };
+
   return (
     <StyledContainer>
       {/* Lewa część ekranu */}
       <LeftContainer>
-        <HandshakeIcon style={{ fontSize: 100, color: 'white' }} />
+        <HandshakeIcon style={{ fontSize: 300, color: 'white' }} />
       </LeftContainer>
 
       {/* Prawa część ekranu */}
@@ -208,7 +230,7 @@ const RegistrationFormStudentStatus: React.FC = () => {
                 </StyledFormControl>
               )}
 
-              {status === 'student' && (
+              {status === 'student' && school.schoolName && (
                 <StyledFormControl component="fieldset">
                   <FormLabel component="legend" style={{ color: '#A758B5', fontWeight: 'bold' }}>Rodzaj studenta</FormLabel>
                   <StyledRadioGroup
@@ -238,9 +260,17 @@ const RegistrationFormStudentStatus: React.FC = () => {
             </React.Fragment>
           ))}
 
-          <StyledButton>
-            Dalej dalr5eyjh655u75
-          </StyledButton>
+          {canAddMoreSchools() && (
+            <StyledButton onClick={handleAddSchool} sx={{ marginTop: 2, marginBottom: 2}}>
+              Dodaj kolejną szkołę
+            </StyledButton>
+          )}
+
+          {canShowNextButton() && (
+            <StyledButton onClick={handleNextClick} sx={{ marginTop: 2, marginBottom: 2, marginLeft: 2  }}>
+              Dalej
+            </StyledButton>
+          )}
         </StyledPaper>
       </RightContainer>
     </StyledContainer>
