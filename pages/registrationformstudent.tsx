@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/system';
 
+// Styled Components
 const StyledContainer = styled(Box)({
   height: '100vh',
   width: '100wh',
@@ -36,13 +37,13 @@ const StyledButton = styled(Button)({
 });
 
 // Component
-const RegistrationFormCompany: React.FC = () => {
+const RegistrationFormStudent: React.FC = () => {
   const [formData, setFormData] = useState({
-    companyName: '',
-    nip: '',
-    street: '',
-    postalCode: '',
-    city: ''
+    name: '',
+    surname: '',
+    phone: '',
+    email: '',
+    birthDate: ''
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -69,56 +70,57 @@ const RegistrationFormCompany: React.FC = () => {
           <TextField
             fullWidth
             margin="normal"
-            id="companyName"
-            name="companyName"
-            label="NAZWA FIRMY"
-            value={formData.companyName}
+            id="name"
+            name="name"
+            label="Imię"
+            value={formData.name}
             onChange={handleChange}
             required
           />
           <TextField
             fullWidth
             margin="normal"
-            id="nip"
-            name="nip"
-            label="NIP"
-            value={formData.nip}
+            id="surname"
+            name="surname"
+            label="Nazwisko"
+            value={formData.surname}
             onChange={handleChange}
             required
           />
           <TextField
             fullWidth
             margin="normal"
-            id="street"
-            name="street"
-            label="Ulica"
-            value={formData.street}
+            id="phone"
+            name="phone"
+            label="Nr telefonu"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+           <TextField
+            fullWidth
+            margin="normal"
+            id="email"
+            name="email"
+            label="Adres E-mail"
+            value={formData.email}
             onChange={handleChange}
             required
           />
           <TextField
             fullWidth
             margin="normal"
-            id="postalCode"
-            name="postalCode"
-            label="Kod Pocztowy"
-            value={formData.postalCode}
+            id="birthDate"
+            name="birthDate"
+            label="Data urodzenia"
+            value={formData.birthDate}
             onChange={handleChange}
             required
           />
-          <TextField
-            fullWidth
-            margin="normal"
-            id="city"
-            name="city"
-            label="Miasto"
-            value={formData.city}
-            onChange={handleChange}
-            required
-          />
+         
           <Grid container justifyContent="center" marginTop={2}>
             <StyledButton type="submit" variant="contained">
-              Zarejestruj
+              Zarejestruj się
             </StyledButton>
           </Grid>
         </Box>
@@ -127,4 +129,4 @@ const RegistrationFormCompany: React.FC = () => {
   );
 };
 
-export default RegistrationFormCompany;
+export default RegistrationFormStudent;
