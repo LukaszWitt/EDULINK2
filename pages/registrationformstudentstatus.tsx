@@ -239,7 +239,7 @@ const RegistrationFormStudentStatus: React.FC = () => {
           ))}
 
           <StyledButton>
-            Dalej
+            Dalej dalr5eyjh655u75
           </StyledButton>
         </StyledPaper>
       </RightContainer>
