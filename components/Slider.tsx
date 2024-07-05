@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import im2 from "../public/images/Twoja praca jest tutaj - 6.png";
 import im3 from "../public/images/Twoja praca jest tutaj - 7.png";
 import im4 from "../public/images/Twoja praca jest tutaj - 8.png";
@@ -10,18 +10,14 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Slider = () => {
-  // Lista obrazów
   const images = [im6, im3, im2, im4, im5];
-
-  // Stan do śledzenia aktualnego indeksu obrazu
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Funkcje do nawigacji
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, [images.length]);
 
   const prevImage = () => {
     if (currentImageIndex > 0) {
@@ -32,8 +28,7 @@ const Slider = () => {
   useEffect(() => {
     const interval = setInterval(nextImage, 3000);
     return () => clearInterval(interval);
-  }, []);   // FUNKCJA DO ZMIENIANIA SLAJDÓW CO KILKA SEKUND
-
+  }, [nextImage]);
   return (
     <Box
       sx={{
@@ -52,9 +47,8 @@ const Slider = () => {
           animation: "2s showanim forwards",
         }}
         alt={`Slide ${currentImageIndex + 1}`}
-        width={1200} //1450//
-        // zrobić breakpointy dla szerokości Image
-      />
+        width={1200} 
+        />
       <IconButton onClick={nextImage}>
         <ArrowForwardIosIcon />
       </IconButton>

@@ -10,7 +10,6 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/system';
 
-// Styled Components
 const StyledContainer = styled(Box)({
   height: '100vh',
   width: '100wh',
@@ -24,8 +23,7 @@ const StyledPaper = styled(Paper)({
   padding: 20,
   width: '500px',
   backgroundColor: '#fff',
-  boxShadow: '0 0 10px 50px rgba(147, 66, 160)', // Zmieniony kolor cienia
-
+  boxShadow: '0 0 10px 50px rgba(147, 66, 160)',
 });
 
 const StyledButton = styled(Button)({
